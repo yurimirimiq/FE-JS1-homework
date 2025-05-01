@@ -1,16 +1,19 @@
-//여기에 코드를 작성해주세요!
-document.querySelector(".sliding").addEventListener("click", function () {
-    const menu = document.querySelector(".menu");
-    const openIcon = document.querySelector(".open");
-    const closeIcon = document.querySelector(".close");
+const sliding = document.querySelector(".sliding") ; 
+const close = document.querySelector(".close") ;
+const open= document.querySelector(".open") ;
+const menu = document.querySelector("menu") ; 
 
-    menu.classList.toggle("active");
-  
-    if (menu.classList.contains("active")) {
-      openIcon.style.display = "inline";
-      closeIcon.style.display = "none";
-    } else {
-      openIcon.style.display = "none";
-      closeIcon.style.display = "inline";
-    }
-  });
+function OpenClose(){
+  if (menu.classList.contains('active')) {
+      menu.classList.remove('active');
+      close.style.display = 'inline';
+      open.style.display = 'none';
+  }
+  else {
+      menu.classList.add('active');
+      close.style.display = 'none';
+      open.style.display = 'inline'
+  }
+}
+
+sliding.addEventListener('click', OpenClose)
